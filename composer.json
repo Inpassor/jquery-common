@@ -1,0 +1,21 @@
+{
+  "name": "Inpassor/jquery-common",
+  "description": "Common functions library",
+  "version": "0.0.3",
+  "keywords": [
+	"front-end",
+	"web",
+	"jquery",
+	"functions"
+  ],
+  "author": [
+	{
+	  "name": "Inpassor",
+	  "email": "inpassor@gmail.com",
+	  "role": "Developer"
+	}
+  ],
+  "require": {
+	"jquery": ">=1.7"
+  }
+}
