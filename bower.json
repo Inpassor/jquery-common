@@ -1,0 +1,16 @@
+{
+  "name": "jquery-common",
+  "version": "0.0.3",
+  "main": [
+    "./js/jquery-common.js"
+  ],
+  "keywords": ["jquery", "plugins", "common", "functions"],
+  "description": "Common functions library",
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "authors": [{
+    "name": "Inpassor <inpassor@yandex.com>"
+  }]
+}
+
