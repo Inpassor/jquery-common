@@ -1,6 +1,6 @@
 /**
  * jquery-common.js
- * @version 0.0.3 (2016.07.05)
+ * @version 0.0.31 (2016.07.18)
  *
  * @author Inpassor <inpassor@gmail.com>
  * @link https://github.com/Inpassor
