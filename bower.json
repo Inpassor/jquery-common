@@ -1,7 +1,6 @@
 {
     "name": "jquery-common",
     "description": "Common functions library",
-    "version": "0.0.31",
     "main": [
         "./js/jquery-common.js"
     ],
