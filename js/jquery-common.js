@@ -12,11 +12,11 @@
         return v === undefined;
     };
 
-    $.isBool = function (b) {
+    $.isBool = $.isBoolean = function (b) {
         return typeof b === 'boolean';
     };
 
-    $.isInt = function (n) {
+    $.isInt = $.isInteger = function (n) {
         return n === +n && !(n % 1);
     };
 

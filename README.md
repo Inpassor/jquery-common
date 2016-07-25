@@ -14,3 +14,39 @@ bower install inpassor-jquery-common
 ```
 composer require bower-asset/inpassor-jquery-common
 ```
+
+## Functions
+
+All the functions are extending jQuery. So you can call them as *jQuery.someFunction()* or *$.someFunction()*.
+
+The list of available functions that this package contains:
+
+### .isUndefined()
+
+.isUndefined(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is undefined.
+
+### .isBool() / .isBoolean()
+
+.isBool(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is boolean.
+
+### .isInt() / .isInteger()
+
+.isInt(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is integer.
+
+### .isFloat()
+
+.isFloat(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is float.
+
+### .isString()
+
+.isString(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is string.
