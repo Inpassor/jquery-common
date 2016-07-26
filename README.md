@@ -50,3 +50,20 @@ The list of available functions that this package contains:
 .isString(variable) | Returns: boolean
 --- | ---:
 *Description*: Checks if variable is string.
+
+### .isArray()
+
+.isArray(variable) | Returns: boolean
+--- | ---:
+*Description*: Checks if variable is array.
+
+### .toFloat()
+
+.toFloat(variable) | Returns: float
+--- | ---:
+*Description*: Tries to convert variable to float. Return float value on success, 0 on fail.
+
+
+
+---
+to be continued...

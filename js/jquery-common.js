@@ -1,8 +1,8 @@
 /**
  * jquery-common.js
- * @version 0.0.31 (2016.07.18)
+ * @version 0.0.32 (2016.07.26)
  *
- * @author Inpassor <inpassor@gmail.com>
+ * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor
  */
 
@@ -66,7 +66,7 @@
     };
 
     $.prefixZero = function (n, length) {
-        length = parseInt(length);
+        length = parseInt(length, 10);
         if (!length) {
             length = (n + '').length;
         }
@@ -91,34 +91,32 @@
             return s;
         }
         switch (arguments.length) {
-            case 1:
-            {
+            case 1: {
                 switch (arguments[0]) {
-                    case 'clear':
-                    {
+                    case 'clear': {
                         window.localStorage.clear();
                         return true;
                     }
-                    default:
-                    {
+                    default: {
                         var v = window.localStorage[arguments[0]];
                         return v ? JSON.parse(v || '{}') : undefined;
                     }
                 }
             }
-            case 2:
-            {
+            case 2: {
+                var r;
                 switch (arguments[0]) {
-                    case 'remove':
-                    {
-                        var r = window.localStorage[arguments[1]] ? true : false;
+                    case 'remove': {
+                        r = window.localStorage[arguments[1]] ? true : false;
                         window.localStorage.removeItem(arguments[1]);
                         return r;
                     }
-                    case 'removeAll':
-                    {
-                        var r = false;
+                    case 'removeAll': {
+                        r = false;
                         for (var i in window.localStorage) {
+                            if (!window.localStorage.hasOwnProperty(i)) {
+                                continue;
+                            }
                             if (i.indexOf(arguments[1]) !== -1) {
                                 window.localStorage.removeItem(i);
                                 r = true;
@@ -126,8 +124,7 @@
                         }
                         return r;
                     }
-                    default:
-                    {
+                    default: {
                         try {
                             window.localStorage[arguments[0]] = JSON.stringify(arguments[1]);
                             return arguments[1];
@@ -157,6 +154,9 @@
     $.toQueryString = function (o) {
         var p = [];
         for (var i in o) {
+            if (!o.hasOwnProperty(i)) {
+                continue;
+            }
             p.push(encodeURIComponent(i) + '=' + encodeURIComponent(o[i]));
         }
         return p.join('&');
