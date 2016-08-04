@@ -61,8 +61,8 @@
         return s.join(dp);
     };
 
-    $.toMoney = function (n) {
-        return n ? $.numberFormat($.toFloat(n), 2, '.', ' ') : '0.00';
+    $.toMoney = function (n, decPoint, thousandSep) {
+        return n ? $.numberFormat($.toFloat(n), 2, decPoint || '.', thousandSep || ' ') : '0.00';
     };
 
     $.prefixZero = function (n, length) {

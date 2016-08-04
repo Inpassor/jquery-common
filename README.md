@@ -17,52 +17,112 @@ composer require bower-asset/inpassor-jquery-common
 
 ## Functions
 
-All the functions are extending jQuery. So you can call them as *jQuery.someFunction()* or *$.someFunction()*.
+All the functions are extending jQuery. So you can call them as
+**jQuery.someFunction()** or **$.someFunction()**.
 
 The list of available functions that this package contains:
+
 
 ### .isUndefined()
 
 .isUndefined(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is undefined.
+**Description**: Checks if **variable** is undefined.
+
 
 ### .isBool() / .isBoolean()
 
 .isBool(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is boolean.
+**Description**: Checks if **variable** is boolean.
+
 
 ### .isInt() / .isInteger()
 
 .isInt(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is integer.
+**Description**: Checks if **variable** is integer.
+
 
 ### .isFloat()
 
 .isFloat(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is float.
+**Description**: Checks if **variable** is float.
+
 
 ### .isString()
 
 .isString(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is string.
+**Description**: Checks if **variable** is string.
+
 
 ### .isArray()
 
 .isArray(variable) | Returns: boolean
 --- | ---:
-*Description*: Checks if variable is array.
+**Description**: Checks if **variable** is array.
+
 
 ### .toFloat()
 
 .toFloat(variable) | Returns: float
 --- | ---:
-*Description*: Tries to convert variable to float. Return float value on success, 0 on fail.
+**Description**: Tries to convert **variable** to float. Return float value on success,
+0 on fail.
 
+
+### .numberFormat()
+
+.numberFormat(number[, decimals[, decPoint, thousandSep]]) | Returns: string
+--- | ---:
+**Description**: Format a number with grouped thousands.
+
+This function accepts either one, two, or four parameters (not three):
+
+If only one parameter is given, **number** will be formatted without decimals, but with
+a comma (",") between every group of thousands.
+
+If two parameters are given, **number** will be formatted with **decimals**
+decimals with a dot (".") in front, and a comma (",") between every group of thousands.
+
+If all four parameters are given, **number** will be formatted with **decimals**
+decimals, **decPoint** instead of a dot (".") before the decimals and **thousandSep**
+instead of a comma (",") between every group of thousands.
+
+Parameter | Description
+--- | ---
+**number** | The number being formatted.
+**decimals** | Sets the number of decimal points.
+**decPoint** | Sets the separator for the decimal point.
+**thousandSep** | Sets the thousands separator.
+
+
+### .toMoney()
+
+.toMoney(number[, decPoint[, thousandSep]]) | Returns: string
+--- | ---:
+**Description**: Converts **number** to money format with 2 decimals after dot.
+
+This function accepts either one, two, or three parameters:
+
+If only one parameter is given, **number** will be formatted with a comma (",")
+between every group of thousands.
+
+If two parameters are given, **number** will be formatted with **decPoint**
+instead of a dot (".") before the decimals and with a comma (",") between every group
+of thousands.
+
+If all three parameters are given, **number** will be formatted with **decPoint**
+instead of a dot (".") before the decimals and **thousandSep**
+instead of a comma (",") between every group of thousands.
+
+Parameter | Description
+--- | ---
+**number** | The number being formatted.
+**decPoint** | Sets the separator for the decimal point.
+**thousandSep** | Sets the thousands separator.
 
 
 ---
