@@ -125,5 +125,46 @@ Parameter | Description
 **thousandSep** | Sets the thousands separator.
 
 
+### .prefixZero()
+
+.prefixZero(number[, length]) | Returns: string
+--- | ---:
+**Description**: Returns **number** with prefix zeros. The total length of the
+returned string equals to **length**.
+
+Parameter | Description
+--- | ---
+**number** | The number being formatted.
+**length** | Length of the returned string.
+
+
+### .db()
+
+**Description**: The function that combines everything you need to work with
+localStorage.
+
+.db() | Returns: bool
+--- | ---:
+**Description**: Returns true if localStorage is avalable. Otherwise returns false.
+
+.db('clear') | Returns: bool
+--- | ---:
+**Description**: Clears all the contents of the localStorage.
+
+.db(key) | Returns: mixed
+--- | ---:
+**Description**: Gets a value of **key** from localStorage. If **key** was not found
+returns *undefined*.
+
+.db('remove', key) | Returns: bool
+--- | ---:
+
+.db('removeAll', keySubstr) | Returns: bool
+--- | ---:
+
+.db(key, value) | Returns: bool
+--- | ---:
+
+
 ---
 to be continued...

@@ -1,6 +1,6 @@
 /**
  * jquery-common.js
- * @version 0.0.32 (2016.07.26)
+ * @version 0.0.33 (2016.07.26)
  *
  * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor
@@ -91,6 +91,9 @@
             return s;
         }
         switch (arguments.length) {
+            case 0: {
+                return true;
+            }
             case 1: {
                 switch (arguments[0]) {
                     case 'clear': {
