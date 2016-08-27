@@ -15,8 +15,6 @@
         "jquery": ">=1.7"
     },
     "authors": [
-        {
-            "name": "Inpassor <inpassor@yandex.com>"
-        }
+        "Inpassor <inpassor@yandex.com>"
     ]
 }
