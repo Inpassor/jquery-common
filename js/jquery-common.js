@@ -192,7 +192,9 @@
     };
 
     $.hashRemove = function () {
-        var sV, sH, l = window.location;
+        var sV,
+            sH,
+            l = window.location;
         if ('pushState' in history) {
             history.pushState('', document.title, l.pathname + l.search);
         } else {

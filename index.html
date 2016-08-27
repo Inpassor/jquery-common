@@ -6,17 +6,25 @@
           content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width,height=device-height"/>
     <meta name="generator" content="Notepad :)"/>
     <meta name="author" content="Inpassor"/>
-    <title>jquery-common test</title>
+    <title>jquery-common demo page</title>
 </head>
 <body>
+<div class="jquery-isUndefined">
+    <h2>$.isUndefined</h2>
+    <label for="jquery-isUndefined-value">value:</label>
+    <input type="text" id="jquery-isUndefined-value" value=""/>
+    <button>$.jquery-isUndefined</button>
+    <label for="jquery-jquery-isUndefined-result">result:</label>
+    <input type="text" readonly="readonly" id="jquery-jquery-isUndefined-result"/>
+</div>
 <div class="jquery-prefixZero">
     <h2>$.prefixZero</h2>
     <label for="jquery-prefixZero-value">value:</label>
     <input type="text" id="jquery-prefixZero-value" value="11"/>
-    <label for="jquery-prefixZero-value">length:</label>
+    <label for="jquery-prefixZero-length">length:</label>
     <input type="text" id="jquery-prefixZero-length" value="5"/>
     <button>$.prefixZero</button>
-    <label>result:</label>
+    <label for="jquery-prefixZero-result">result:</label>
     <input type="text" readonly="readonly" id="jquery-prefixZero-result"/>
 </div>
 <div class="jquery-removePrefixZero">
@@ -24,7 +32,7 @@
     <label for="jquery-removePrefixZero-value">value:</label>
     <input type="text" id="jquery-removePrefixZero-value" value="00011"/>
     <button>$.removePrefixZero</button>
-    <label>result:</label>
+    <label for="jquery-removePrefixZero-result">result:</label>
     <input type="text" readonly="readonly" id="jquery-removePrefixZero-result"/>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -32,6 +40,10 @@
 <script type="text/javascript" src="js/jquery-common.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $('button', '.jquery-removePrefixZero').on('click', function () {
+            $('#jquery-removePrefixZero-result').val($.removePrefixZero($('#jquery-removePrefixZero-value').val()));
+        });
 
         $('button', '.jquery-prefixZero').on('click', function () {
             $('#jquery-prefixZero-result').val($.prefixZero($('#jquery-prefixZero-value').val(), $('#jquery-prefixZero-length').val()));
