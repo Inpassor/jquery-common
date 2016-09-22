@@ -107,16 +107,16 @@ Parameter | Description
 
 This function accepts either one, two, or three parameters:
 
-If only one parameter is given, **number** will be formatted with a comma (",")
-between every group of thousands.
+If only one parameter is given, **number** will be formatted with dot (".") in front of decimals
+and with a space (" ") between every group of thousands.
 
 If two parameters are given, **number** will be formatted with **decPoint**
-instead of a dot (".") before the decimals and with a comma (",") between every group
+instead of a dot (".") before the decimals and with a space (" ") between every group
 of thousands.
 
 If all three parameters are given, **number** will be formatted with **decPoint**
 instead of a dot (".") before the decimals and **thousandSep**
-instead of a comma (",") between every group of thousands.
+instead of a space (" ") between every group of thousands.
 
 Parameter | Description
 --- | ---
@@ -166,5 +166,19 @@ returns *undefined*.
 --- | ---:
 
 
----
-to be continued...
+### .getQueryParams()
+
+
+### .toQueryString()
+
+
+### .getScriptParams()
+
+
+### .getHashParams()
+
+
+### .hashRemove()
+
+
+### .render()
