@@ -153,17 +153,21 @@ localStorage.
 
 .db(key) | Returns: mixed
 --- | ---:
-**Description**: Gets a value of **key** from localStorage. If **key** was not found
+**Description**: Gets a value of **key** from then localStorage. If **key** was not found
 returns *undefined*.
 
 .db('remove', key) | Returns: bool
 --- | ---:
+**Description**: Removes **key** and its value from the localStorage.
 
 .db('removeAll', keySubstr) | Returns: bool
 --- | ---:
+**Description**: Removes all data from the localStorage that keys contain **keySubstr**
+substring.
 
 .db(key, value) | Returns: bool
 --- | ---:
+**Description**: Sets **key** and its **value** to the localStorage.
 
 
 ### .getQueryParams()
