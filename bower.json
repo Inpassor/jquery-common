@@ -2,7 +2,7 @@
     "name": "jquery-common",
     "description": "Common functions library",
     "main": [
-        "/js/jquery-common.js"
+        "./js/jquery-common.js"
     ],
     "license": "MIT",
     "keywords": [
