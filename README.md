@@ -238,7 +238,7 @@ Parameter | Description
  
 #### Examples:
 
-All the examples below will return th same string
+All the examples below will return the same string
 "The server time: 12:30:41".
 
 ```
