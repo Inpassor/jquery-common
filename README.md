@@ -1,5 +1,7 @@
 # jquery-common
+
 Common functions library
+
 
 ## Installation
 
@@ -14,6 +16,7 @@ bower install inpassor-jquery-common
 ```
 composer require bower-asset/inpassor-jquery-common
 ```
+
 
 ## Functions
 
@@ -172,17 +175,101 @@ substring.
 
 ### .getQueryParams()
 
+.getQueryParams([queryString]) | Returns: object
+--- | ---:
+**Description**: Parses query string of the current URL or **queryString**
+if given. Returns object with keys and values corresponding to query parameters
+and its values.
+
+Parameter | Description
+--- | ---
+**queryString** | The string being parsed. If not given, query string of
+the current URL will be used instead.
+
 
 ### .toQueryString()
+
+.toQueryString(object) | Returns: string
+--- | ---:
+**Description**: Converts object to query string.
+
+Parameter | Description
+--- | ---
+**object** | The object being converted.
 
 
 ### .getScriptParams()
 
+.getScriptParams(filename) | Returns: object
+--- | ---:
+**Description**: Finds a sript file in DOM srtucture by its **filename** and
+parses query parameters ot this file using **.getQueryParams()** function.
+
+Parameter | Description
+--- | ---
+**filename** | The name of sript file without extension ".js".
+
 
 ### .getHashParams()
+
+.getHashParams() | Returns: object
+--- | ---:
+**Description**: Parses hash of the current URL using **.getQueryParams()** function.
 
 
 ### .hashRemove()
 
+**Description**: Removes hash from query string of the current URL preserving
+current scroll position.
+
 
 ### .render()
+
+.render(template[, data]) | Returns: string
+--- | ---:
+**Description**: Renders a string **template** using **data**.
+All the **template** constructions of the form "{{...}}" will be
+replaced by **data** values.
+
+Parameter | Description
+--- | ---
+**template** | A string template.
+**data** | Object, which values will be substituted to the **template**.
+ 
+#### Examples:
+
+All the examples below will return th same string
+"The server time: 12:30:41".
+
+```
+$.render("The server time: {{time}}", {
+    time: '12:30:41'
+});
+```
+
+```
+$.render("The server time: {{time[0]}}:{{time[1]}}:{{time[2]}}", {
+    time: [12, 30, 41]
+});
+```
+
+```
+$.render("The server time: {{time.hour}}:{{time.min}}:{{time.sec}}", {
+    time: {
+        hour: 12,
+        min: 30,
+        sec: 41
+     }
+});
+```
+
+```
+$.render("{{dummy}}The server time: {{hour}}:{{min}}:{{sec}}", {
+    hour: 12,
+    min: 30,
+    sec: 41
+});
+```
+
+Note that "{{dummy}}" in the example above will be substituted by empty
+string beacuse of "dummy" parameter is missing in data object.

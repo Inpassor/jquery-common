@@ -1,9 +1,10 @@
 /**
  * jquery-common.js
- * @version 0.0.34 (2016.07.26)
  *
  * @author Inpassor <inpassor@yandex.com>
- * @link https://github.com/Inpassor
+ * @link https://github.com/Inpassor/jquery-common
+ *
+ * @version 0.0.4 (2016.10.08)
  */
 
 ;(function ($, window, document, undefined) {
