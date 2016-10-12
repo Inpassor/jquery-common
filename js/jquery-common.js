@@ -4,7 +4,7 @@
  * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor/jquery-common
  *
- * @version 0.0.4 (2016.10.08)
+ * @version 0.1.0 (2016.10.12)
  */
 
 ;(function ($, window, document, undefined) {
