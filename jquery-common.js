@@ -4,7 +4,7 @@
  * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor/jquery-common
  *
- * @version 0.1.1 (2016.10.13)
+ * @version 0.1.2 (2016.10.13)
  */
 
 ;(function ($, window, document, undefined) {
@@ -33,7 +33,7 @@
         return a instanceof Array;
     };
 
-    $.getRandomString = function(){
+    $.getRandomString = function () {
         return Math.random().toString(36).slice(2);
     };
 
@@ -147,11 +147,17 @@
     };
 
     $.getQueryParams = function (h) {
+        var n;
         if (!h) {
+            n = 1;
             h = window.location.href;
         }
+        var p = h.indexOf('?');
+        if (n && p === -1) {
+            return {};
+        }
         var q = {},
-            t = h.substr(h.indexOf('?') + 1).split('&');
+            t = h.substr(p + 1).split('&');
         for (var i = 0, l = t.length; i < l; i++) {
             t[i] = decodeURIComponent(t[i]).split('=');
             q[t[i][0]] = t[i][1] || '';

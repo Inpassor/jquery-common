@@ -1,6 +1,11 @@
-# jquery-common
-
 Common functions library
+========================
+
+Author: Inpassor <inpassor@yandex.com>
+
+GitHub repository: https://github.com/Inpassor/jquery-common
+
+This package is the set of common functions, that missing in jQuery, to my mind.
 
 
 ## Installation
