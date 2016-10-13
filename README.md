@@ -68,6 +68,13 @@ The list of available functions that this package contains:
 **Description**: Checks if **variable** is array.
 
 
+### .getRandomString()
+
+.getRandomString() | Returns: string
+--- | ---:
+**Description**: Generates a random string.
+
+
 ### .toFloat()
 
 .toFloat(variable) | Returns: float

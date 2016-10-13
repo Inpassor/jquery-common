@@ -4,7 +4,7 @@
  * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor/jquery-common
  *
- * @version 0.1.0 (2016.10.12)
+ * @version 0.1.1 (2016.10.13)
  */
 
 ;(function ($, window, document, undefined) {
@@ -31,6 +31,10 @@
 
     $.isArray = function (a) {
         return a instanceof Array;
+    };
+
+    $.getRandomString = function(){
+        return Math.random().toString(36).slice(2);
     };
 
     $.toFloat = function (n) {
