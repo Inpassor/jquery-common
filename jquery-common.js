@@ -153,7 +153,7 @@
             h = window.location.href;
         }
         var p = h.indexOf('?');
-        if (n && p === -1) {
+        if (!n && p === -1) {
             return {};
         }
         var q = {},
