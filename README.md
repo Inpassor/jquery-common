@@ -195,8 +195,7 @@ and its values.
 
 Parameter | Description
 --- | ---
-**queryString** | The string being parsed. If not given, query string of
-the current URL will be used instead.
+**queryString** | The string being parsed. If not given, query string of the current URL will be used instead.
 
 
 ### .toQueryString()
