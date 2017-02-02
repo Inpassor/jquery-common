@@ -235,6 +235,31 @@ Parameter | Description
 current scroll position.
 
 
+### .waitFor()
+
+.waitFor(globalObjectName[, period[, interval]]) | Returns: $.Deferred
+--- | ---:
+**Description**: Looks for window global variable.
+
+Parameter | Default | Description
+--- | --- | ---
+**globalObjectName** | | The name of a variable in window.
+**period** | 1000 | The period in miliseconds to wait for variable.
+**interval** | 10 | The inverval of iterations.
+
+#### Example:
+
+```
+$.waitFor('App')
+    .done(function(){
+        // window.App successfully appeared.
+    })
+    .fail(function(){
+        // 1 second past, window.App did not appear.
+    });
+```
+
+
 ### .render()
 
 .render(template[, data]) | Returns: string

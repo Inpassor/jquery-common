@@ -4,7 +4,7 @@
  * @author Inpassor <inpassor@yandex.com>
  * @link https://github.com/Inpassor/jquery-common
  *
- * @version 0.1.2 (2016.10.13)
+ * @version 0.2.0 (2017.02.02)
  */
 
 ;(function ($, window, document, undefined) {
@@ -39,10 +39,10 @@
 
     $.toFloat = function (n) {
         return n ? parseFloat((n + '')
-            .replace(/[^0-9+\-Ee.]/g, '')
-            .replace(/,/g, '.')
-            .replace(/ /g, '')
-        ) : 0;
+                .replace(/[^0-9+\-Ee.]/g, '')
+                .replace(/,/g, '.')
+                .replace(/ /g, '')
+            ) : 0;
     };
 
     $.numberFormat = function (number, decimals, decPoint, thousandSep) {
@@ -115,7 +115,7 @@
                 var r;
                 switch (arguments[0]) {
                     case 'remove': {
-                        r = window.localStorage[arguments[1]] ? true : false;
+                        r = !!window.localStorage[arguments[1]];
                         window.localStorage.removeItem(arguments[1]);
                         return r;
                     }
@@ -217,15 +217,39 @@
         }
     };
 
+    $.waitFor = function (globalObjectName, period, interval) {
+        period = parseInt(period);
+        interval = parseInt(interval);
+        if (!period) {
+            period = 1000;
+        }
+        if (!interval) {
+            interval = 10;
+        }
+        var deferred = $.Deferred(),
+            t = window.setInterval(function () {
+                if (window[globalObjectName]) {
+                    window.clearInterval(t);
+                    return deferred.resolve();
+                }
+                period -= interval;
+                if (period <= 0) {
+                    window.clearInterval(t);
+                    return deferred.reject();
+                }
+            }, interval);
+        return deferred.promise();
+    };
+
     $._renderT = {};
     $.render = function (template, data) {
         return !template ? '' : ($._renderT[template] = $._renderT[template] || new Function("_", "return '" + template
-                    .replace(/\n/g, "\\n")
-                    .replace(/\r/g, "\\r")
-                    .replace(/'/g, "\\'")
-                    .replace(/\{\s*([^\}]+)\s*\}/g, "'+(_.$1?(_.$1+''):(_.$1===0?0:''))+'")
-                + "'"
-            ))(data);
+                        .replace(/\n/g, "\\n")
+                        .replace(/\r/g, "\\r")
+                        .replace(/'/g, "\\'")
+                        .replace(/\{\s*([^\}]+)\s*\}/g, "'+(_.$1?(_.$1+''):(_.$1===0?0:''))+'")
+                    + "'"
+                ))(data);
     };
 
     String.prototype.trim = function () {
