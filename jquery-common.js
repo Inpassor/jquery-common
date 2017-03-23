@@ -171,7 +171,7 @@
             if (!o.hasOwnProperty(i)) {
                 continue;
             }
-            p.push(encodeURIComponent(i) + '=' + encodeURIComponent(o[i]));
+            p.push(encodeURIComponent(i) + (o[i] ? '=' + encodeURIComponent(o[i]) : ''));
         }
         return p.join('&');
     };
